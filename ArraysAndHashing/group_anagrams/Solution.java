@@ -23,28 +23,56 @@ public class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         if(strs == null || strs.length == 0) return new ArrayList<>();
 
-       Map<String,List<String>> map = new HashMap<>();
+        Map<String, List<String>> map = new HashMap<>();
 
-       for(String word : strs) {
-         int[] counter = new int[26];
+        for(String word : strs) {
+            int[] counter = new int[26];
 
-         for(char ch : word.toCharArray()) {
-            counter[ch - 'a']++;
-         }
+            for(char ch : word.toCharArray()) {
+                counter[ch-'a']++;
+            }
 
-         StringBuilder keyBuilder = new StringBuilder();
+            StringBuilder keyBuilder = new StringBuilder();
 
-         for(int count : counter) {
-            keyBuilder.append(count).append("#");
-         }
+            for(int count : counter) {
+                keyBuilder.append(count).append("#");
+            }
 
-         String key = keyBuilder.toString();
+            String key = keyBuilder.toString();
 
-         if(!map.containsKey(key)) map.put(key, new ArrayList<>());
+            if(!map.containsKey(key)) map.put(key, new ArrayList<>());
 
-         map.get(key).add(word);
-       }
+            map.get(key).add(word);
+        }
 
        return new ArrayList<>(map.values());
     } 
+
+    // public List<List<String>> groupAnagrams(String[] strs) {
+    //     if(strs == null || strs.length == 0) return new ArrayList<>();
+
+    //    Map<String,List<String>> map = new HashMap<>();
+
+    //    for(String word : strs) {
+    //      int[] counter = new int[26];
+
+    //      for(char ch : word.toCharArray()) {
+    //         counter[ch - 'a']++;
+    //      }
+
+    //      StringBuilder keyBuilder = new StringBuilder();
+
+    //      for(int count : counter) {
+    //         keyBuilder.append(count).append("#");
+    //      }
+
+    //      String key = keyBuilder.toString();
+
+    //      if(!map.containsKey(key)) map.put(key, new ArrayList<>());
+
+    //      map.get(key).add(word);
+    //    }
+
+    //    return new ArrayList<>(map.values());
+    // } 
 }
