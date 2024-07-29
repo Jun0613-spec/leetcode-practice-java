@@ -1,6 +1,7 @@
 package SlidingWindow.LongestSubstringWithoutRepeatingCharacters;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class Solution {
     public static void main(String[] args) {
@@ -8,20 +9,19 @@ public class Solution {
 
         String s = "abcabcbb"; //output 3
         String s2 = "bbbbb"; //output 1
-        String s3 = "pwwkew"; //ouput 3
+         String s3 = "pwwkew"; //ouput 3
 
         System.out.println(solution.lenghOfLongestSubstring(s));
-        System.out.println(solution.lenghOfLongestSubstring(s2));
+         System.out.println(solution.lenghOfLongestSubstring(s2));
         System.out.println(solution.lenghOfLongestSubstring(s3));
     }
     
     //Time O(n)
     //Sapce O(n)
     public int lenghOfLongestSubstring(String s) {
-       int maxLen = 0;
-       int start = 0;
-       int end = 0;
-       HashSet <Character> set = new HashSet<>();
+       Set<Character> set = new HashSet<>();
+
+       int start = 0, end = 0, maxLen = 0;
 
        while(end < s.length()) {
         if(set.contains(s.charAt(end))) {
@@ -30,9 +30,11 @@ public class Solution {
         } else {
             set.add(s.charAt(end));
             end++;
-            maxLen = Math.max(end - start, maxLen);
+            
+            maxLen = Math.max(maxLen, end - start);
         }
        }
+
        return maxLen;
     }
 }
