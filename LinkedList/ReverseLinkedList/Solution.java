@@ -37,7 +37,9 @@ public class Solution {
         ListNode reversedHead3 = solution.reverseList(head3);
         printList(reversedHead3); // Output: []
     }
-
+    
+    //Time O(n)
+    //Space O(1)
     public ListNode reverseList(ListNode head) {
        ListNode prev = null;
        ListNode curr = head;
