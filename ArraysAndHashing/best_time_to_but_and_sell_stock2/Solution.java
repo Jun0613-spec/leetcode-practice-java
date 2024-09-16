@@ -1,5 +1,7 @@
 package ArraysAndHashing.best_time_to_but_and_sell_stock2;
 
+//Time O(n)
+//Space O(1)
 public class Solution {
      public static void main(String[] args) {
         Solution solution = new Solution();
