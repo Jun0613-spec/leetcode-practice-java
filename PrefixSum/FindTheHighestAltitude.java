@@ -1,5 +1,7 @@
 package PrefixSum;
 
+//Time O(n)
+//Space O(1)
 public class FindTheHighestAltitude {
     public static void main(String[] args) {
         System.out.println(highestAltitude(new int[]{-5, 1, 5, 0, -7})); // Output: 1
